@@ -1,18 +1,21 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
+import Banner from "../pages/Banner";
 
 const MainLayout = () => {
     return (
         <div className="min-h-screen flex flex-col">
-            {/* Navbar */}
-            <Navbar></Navbar>
-            {/* Main Context */}
-            <div className="w-[90%] md:w-[80%] mx-auto py-10 flex-grow">
-                <Outlet></Outlet>
+            <Navbar />
+            {/* Banner Full Width */}
+            <div className="w-full">
+                <Banner />
             </div>
-            {/* Footer */}
-            <Footer></Footer>
+            {/* Main Content */}
+            <div className="w-[85%] md:w-[90%] mx-auto flex-grow">
+                <Outlet />
+            </div>
+            <Footer />
         </div>
     );
 };

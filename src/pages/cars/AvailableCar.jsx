@@ -6,7 +6,7 @@ const AvailableCar = ({ car, view }) => {
 
     return (
         <div
-            className={`bg-white p-3 rounded shadow ${view === 'list' ? 'flex items-center space-x-5' : ''
+            className={`bg-gray-200 p-3 rounded shadow ${view === 'list' ? 'flex items-center space-x-5' : ''
                 }`}
         >
             {/* Car Image */}

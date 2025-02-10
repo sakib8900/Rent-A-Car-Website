@@ -11,20 +11,25 @@ const Navbar = () => {
     const [dark, setDark] = useState(false);
 
     const darkModeHandler = () => {
+        document.body.classList.remove("light"); // Light Mode সরাও
+        document.body.classList.toggle("dark"); // Dark Mode টগল করো
+        if (!document.body.classList.contains("dark")) {
+            document.body.classList.add("light"); // যদি Dark Mode না থাকে, Light Mode যোগ করো
+        }
         setDark(!dark);
-        document.body.classList.toggle("dark");
     };
+    
     // console.log(user);
     // console.log(user);
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                console.log('success logout');
+                // console.log('success logout');
             })
     };
 
     return (
-        <div className="navbar bg-gray-100 shadow-md px-5 relative z-20">
+        <div className="navbar bg-red-300 shadow-md md:px-8 relative z-20">
             {/* Navbar Start */}
             <div className="navbar-start">
                 <div className="dropdown lg:hidden">

@@ -33,24 +33,29 @@
 }
 
 /* Dark mode */
+/* 🌟 Light Mode (সঠিক CSS) */
+body.light {
+    background-color: #fcd8d4 !important; /* Light red background */
+    color: #333 !important; /* Text color */
+}
+
+/* Navbar Light Mode */
+body.light .navbar {
+    background-color: #fca5a5 !important;
+}
+
+/* 🌙 Dark Mode */
 body.dark {
-    background-color: #1a202c;
-    color: #e11d48; /* Red text for dark mode */
+    background-color: #1a202c !important;
+    color: #e11d48 !important; /* Red text for dark mode */
 }
 
 body.dark .navbar {
-    background-color: #2d3748;
-}
-body.dark .footer {
-    background-color: #2d3748;
-}
-
-body.dark .navbar a {
-    color: #e11d48;
+    background-color: #2d3748 !important;
 }
 
 body.dark .menu a:hover {
-    color: #e11d48; /* Red color for dark mode hover */
-    border-color: #e11d48;
-    background-color: #ffe4e6; /* Light red background */
+    color: #e11d48 !important; /* Red hover */
+    border-color: #e11d48 !important;
+    background-color: #ffe4e6 !important;
 }
