@@ -11,14 +11,9 @@ const Navbar = () => {
     const [dark, setDark] = useState(false);
 
     const darkModeHandler = () => {
-        document.body.classList.remove("light"); // Light Mode সরাও
-        document.body.classList.toggle("dark"); // Dark Mode টগল করো
-        if (!document.body.classList.contains("dark")) {
-            document.body.classList.add("light"); // যদি Dark Mode না থাকে, Light Mode যোগ করো
-        }
         setDark(!dark);
+        document.body.classList.toggle("dark");
     };
-    
     // console.log(user);
     // console.log(user);
     const handleLogOut = () => {

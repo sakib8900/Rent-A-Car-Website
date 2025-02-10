@@ -1,25 +1,25 @@
 /* Active link styles */
 .active {
-    color: #e11d48; /* Red shade */
+    color: #e11d48;
     font-weight: bold;
     letter-spacing: 1px;
-    border: 2px solid #e11d48; /* Red border */
+    border: 2px solid #e11d48;
     padding: 4px 8px;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
-    background-color: #ee838b; /* Light red background */
+    background-color: #ee838b;
 }
 
 .active:hover {
-    color: #9b1c2f; /* Darker red for hover */
-    background-color: #ffe4e6; /* Light red background */
-    border-color: #9b1c2f; /* Darker red border */
+    color: #9b1c2f;
+    background-color: #ffe4e6;
+    border-color: #9b1c2f;
     text-decoration-thickness: 3px;
 }
 
 /* Navbar link styles */
 .menu a {
-    color: #333; /* Dark gray text */
+    color: #e11d48;
     padding: 4px 8px;
     border: 2px solid transparent;
     border-radius: 8px;
@@ -27,27 +27,15 @@
 }
 
 .menu a:hover {
-    color: #e11d48; /* Red color on hover */
-    border-color: #e11d48; /* Red border on hover */
-    background-color: #ffe4e6; /* Light red background */
-}
-
-/* Dark mode */
-/* 🌟 Light Mode (সঠিক CSS) */
-body.light {
-    background-color: #fcd8d4 !important; /* Light red background */
-    color: #333 !important; /* Text color */
-}
-
-/* Navbar Light Mode */
-body.light .navbar {
-    background-color: #fca5a5 !important;
+    color: #e11d48; 
+    border-color: #e11d48;
+    background-color: #ffe4e6;
 }
 
 /* 🌙 Dark Mode */
 body.dark {
     background-color: #1a202c !important;
-    color: #e11d48 !important; /* Red text for dark mode */
+    color: #e11d48 !important;
 }
 
 body.dark .navbar {
@@ -55,7 +43,7 @@ body.dark .navbar {
 }
 
 body.dark .menu a:hover {
-    color: #e11d48 !important; /* Red hover */
+    color: #e11d48 !important;
     border-color: #e11d48 !important;
     background-color: #ffe4e6 !important;
 }

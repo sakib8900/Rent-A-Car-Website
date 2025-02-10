@@ -23,7 +23,10 @@ const AvailableCar = ({ car, view }) => {
                 <p className="text-sm text-gray-600">Location: {location}</p>
                 <p className="text-sm text-gray-400">Added: {post_date}</p>
                 <Link to={`/cars/${_id}`}>
-                    <button className="mt-3 px-3 py-1 bg-red-500 text-white rounded hover:bg-blue-600">
+                    <button className="mt-2 px-2 py-1 backdrop-blur-md text-red-500 text-lg font-semibold rounded-lg 
+                                             shadow-lg hover:bg-red-500 hover:text-black border-2 border-red-500 
+                                             transition-all duration-300 hover:shadow-red-500/50 
+                                             active:scale-95">
                         Book Now
                     </button>
                 </Link>

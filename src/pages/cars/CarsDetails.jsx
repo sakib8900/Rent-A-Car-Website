@@ -159,7 +159,10 @@ const CarDetails = () => {
             </div>
             <button
               onClick={handleBooking}
-              className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 w-full lg:w-auto"
+              className="w-full lg:w-auto px-6 py-2 backdrop-blur-md text-red-500 text-lg font-semibold rounded-lg 
+                                             shadow-lg hover:bg-red-500 hover:text-black border-2 border-red-500 
+                                             transition-all duration-300 hover:shadow-red-500/50 
+                                             active:scale-95"
             >
               Book Now
             </button>

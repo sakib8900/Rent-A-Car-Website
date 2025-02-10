@@ -12,11 +12,17 @@ const Home = () => {
             <Helmet>
                 <title>Rent A Car || Home</title>
             </Helmet>
-            {/* <Banner></Banner> */}
-            <Banner2></Banner2>
-            <RecentCars></RecentCars>
-            <ClientReview></ClientReview>
-            <SpecialOffers></SpecialOffers>
+            {/* Full Width Banner */}
+            <div className="w-full">
+                <Banner />
+                <Banner2 />
+            </div>
+            {/* Centered Content */}
+            <div className="w-[85%] md:w-[90%] mx-auto">
+                <RecentCars />
+                <ClientReview />
+                <SpecialOffers />
+            </div>
         </div>
     );
 };
