@@ -12,6 +12,10 @@ import PrivateRoute from "../utilitis/PrivateRoute";
 import AddCar from "../form/AddCar";
 import MyBooking from "../pages/MyBooking";
 import MyCars from "../pages/cars/MyCars";
+import Profile from "../pages/Profile";
+import AboutUs from "../pages/Company/AboutUs";
+import Contact from "../pages/Company/Contact";
+import Privacy from "../pages/Company/Privacy";
 
 const router = createBrowserRouter([
   {
@@ -53,11 +57,29 @@ const router = createBrowserRouter([
         </PrivateRoute>
       },
       {
+        path: "/myProfile",
+        element: <PrivateRoute>
+          <Profile></Profile>
+        </PrivateRoute>
+      },
+      {
         path: "/cars/:id",
         element: <PrivateRoute>
           <CarsDetails></CarsDetails>
         </PrivateRoute>,
         loader: ({ params }) => fetch(`https://assignment-11-server-one-lemon.vercel.app/cars/${params.id}`)
+      },
+      {
+        path: "/aboutUs",
+        element: <AboutUs></AboutUs>
+      },
+      {
+        path: "/Contact",
+        element: <Contact></Contact>
+      },
+      {
+        path: "/Privacy",
+        element: <Privacy></Privacy>
       },
       {
         path: "*",

@@ -28,7 +28,7 @@ const Login = () => {
                     confirmButtonText: "Continue",
                     confirmButtonColor: "#e11d48",
                 }).then(() => {
-                    navigate(from, { replace: true });
+                    navigate(from || "/", { replace: true });
                 });
             })
             .catch((error) => {
