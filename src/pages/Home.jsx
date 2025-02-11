@@ -25,8 +25,6 @@ const Home = () => {
         <Banner />
         <Banner2 />
       </div>
-
-      {/* Centered Content with Motion Effects */}
       <div className="w-[85%] md:w-[90%] mx-auto">
         <motion.div
           variants={sectionVariants}
