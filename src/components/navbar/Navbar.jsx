@@ -23,11 +23,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar sticky top-0 bg-red-300 bg-opacity-80 backdrop-blur-md shadow-md px-5 transition-all duration-300 z-20">
+    <div className="navbar sticky top-0 bg-red-300 bg-opacity-80 backdrop-blur-md shadow-md md:px-5 transition-all duration-300 z-40">
       {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown lg:hidden">
-          <label tabIndex={0} className="btn btn-ghost text-red-500 border-2 border-red-600 mr-2">
+          <label tabIndex={0} className="btn btn-ghost rounded-full text-red-500 border-2 border-red-600 mr-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -111,7 +111,7 @@ const Navbar = () => {
                 <img
                   src={user.photoURL}
                   alt="User Profile"
-                  className="w-12 border-2 border-red-700 rounded-full mx-auto mb-4 object-cover"
+                  className="w-12 h-12 border-2 border-red-700 rounded-full mx-auto mb-4 object-cover"
                 />
               ) : (
                 <p className="text-gray-500">Loading Profile Image...</p>
@@ -119,7 +119,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu dropdown-content absolute right-0 mt-3 p-2 shadow bg-gray-100 rounded-box w-52"
+              className="menu dropdown-content absolute right-0 mt-56 p-2 shadow bg-gray-100 rounded-box w-52"
             >
               <NavLink to="/addCar">Add Car</NavLink>
               <NavLink to="/myCars">My Cars</NavLink>

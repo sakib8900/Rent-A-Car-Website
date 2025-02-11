@@ -1,33 +1,147 @@
-import React from "react";
-import { FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    Swal.fire({
+      title: "Success!",
+      text: "Your message has been sent successfully!",
+      icon: "success",
+      confirmButtonText: "Cool",
+      background: "#f3f4f6",
+      color: "#1f2937",
+      confirmButtonColor: "#10b981",
+    });
+
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center p-6">
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-md text-center">
-        <h1 className="text-3xl font-bold text-red-600 mb-4">Contact Me</h1>
-        <p className="text-gray-600 mb-6">Feel free to reach out via Email or WhatsApp!</p>
+    <div className="py-10">
+      <div className="container mx-auto px-6 md:px-12">
+        <h2 className="text-4xl font-bold text-red-500 text-center mb-12">
+          Contact Me
+        </h2>
 
-        {/* Email Contact */}
-        <div className="flex items-center justify-center gap-4 mb-4">
-          <a
-            href="mailto:md.sakib88900@gmail.com"
-            className="flex items-center gap-2 text-blue-600 font-semibold hover:underline"
-          >
-            <FaEnvelope className="text-2xl" /> Our Email
-          </a>
-        </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Contact Form */}
+          <div className="bg-white rounded-lg shadow-xl p-8">
+            <h3 className="text-2xl text-red-500 font-bold mb-6">
+              Let's Work Together
+            </h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  placeholder="First Name"
+                  className="w-full p-3 rounded bg-gray-200 text-gray-800 border border-gray-300 focus:border-red-500 focus:outline-none"
+                />
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  placeholder="Last Name"
+                  className="w-full p-3 rounded bg-gray-200 text-gray-800 border border-gray-300 focus:border-red-500 focus:outline-none"
+                />
+              </div>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email"
+                className="w-full p-3 rounded bg-gray-200 text-gray-800 border border-gray-300 focus:border-red-500 focus:outline-none"
+              />
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Phone Number"
+                className="w-full p-3 rounded bg-gray-200 text-gray-800 border border-gray-300 focus:border-red-500 focus:outline-none"
+              />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your Message"
+                rows="4"
+                className="w-full p-3 rounded bg-gray-200 text-gray-800 border border-gray-300 focus:border-red-500 focus:outline-none"
+              ></textarea>
+              <button
+                type="submit"
+                className="w-full bg-red-500 text-white py-3 px-6 rounded hover:bg-red-600 transition-colors font-semibold"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
 
-        {/* WhatsApp Contact */}
-        <div className="flex items-center justify-center gap-4">
-          <a
-            href="https://wa.me/8801858388900"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-green-600 font-semibold hover:underline"
-          >
-            <FaWhatsapp className="text-2xl" /> Contact WhatsUp
-          </a>
+          {/* Contact Info */}
+          <div className="bg-white rounded-lg shadow-xl p-8">
+            <h3 className="text-2xl text-red-500 font-bold mb-6">
+              Contact Information
+            </h3>
+            <div className="space-y-6">
+              <div className="flex items-center space-x-4 text-gray-800 hover:text-red-500 transition-colors">
+                <FaEnvelope className="text-2xl text-red-500" />
+                <div>
+                  <p className="text-sm text-gray-500">Email</p>
+                  <a href="mailto:md.sakib88900@gmail.com" className="text-lg">
+                    md.sakib88900@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4 text-gray-800 hover:text-red-500 transition-colors">
+                <FaPhone className="text-2xl text-red-500" />
+                <div>
+                  <p className="text-sm text-gray-500">Phone</p>
+                  <a href="tel:+8801858388900" className="text-lg">
+                    01858-388900
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4 text-gray-800 hover:text-red-500 transition-colors">
+                <FaWhatsapp className="text-2xl text-red-500" />
+                <div>
+                  <p className="text-sm text-gray-500">WhatsApp</p>
+                  <a href="https://wa.me/8801858388900" className="text-lg">
+                    01858-388900
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

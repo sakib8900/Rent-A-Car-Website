@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { MdViewModule, MdViewList } from "react-icons/md";
+import { motion } from "framer-motion";
 import AvailableCar from "./AvailableCar";
 import { Helmet } from "react-helmet";
 import Loading from "../../utilitis/Loading";
-import { p } from "framer-motion/client";
+
+const fadeInVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const AvailableCars = () => {
   const [cars, setCars] = useState([]);
@@ -44,6 +49,7 @@ const AvailableCars = () => {
     if (sortOption === "highest") return b.daily_price - a.daily_price;
     return 0;
   });
+
   if (loading) {
     return <Loading />;
   }
@@ -53,8 +59,15 @@ const AvailableCars = () => {
       <Helmet>
         <title>Rent A Car || Available Cars</title>
       </Helmet>
-      {/* Search */}
-      <div className="flex flex-col md:flex-row justify-between items-center mb-5">
+
+      {/* Search & Filter Section */}
+      <motion.div
+        className="flex flex-col md:flex-row justify-between items-center mb-5"
+        variants={fadeInVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {/* Search Bar */}
         <input
           type="text"
@@ -96,20 +109,24 @@ const AvailableCars = () => {
             <option value="highest">Price: Highest</option>
           </select>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Cars */}
-      <div
+      {/* Cars List with Animation */}
+      <motion.div
         className={`grid gap-5 ${
           view === "grid"
             ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
             : "grid-cols-1"
         }`}
+        variants={fadeInVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
       >
         {sortedCars.map((car) => (
           <AvailableCar key={car._id} car={car} view={view} />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
